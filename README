@@ -1,0 +1,25 @@
+This program reproduces Fig. 11 in:
+I. Hayut, B.W. Connors, E.E. Fanselow and D. Golomb,
+LTS and FS inhibitory interneurons, short-term synaptic plasticity, and 
+cortical circuit dynamics
+PLoS Comput. Biol. 7(10): e1002248.
+
+Files:
+dyn_all.com           Command procedure that runs the program.
+dyn_all.gr            XMGrace parameter file for plotting the figure.
+Makefile       
+rlf.c  rlfn.c         Program Files of C program.
+rlf.h rlfn.h rlfa.h   Header files for C program.
+nr.c                  Functions from NUmerical Recipes.
+nr.h                  Header file for functions from NUmerical Recipes.
+rlf.n.d4              Data file for panel A.
+rlf.n.d1              Data file for panel B.
+rlf.n.d2              Data file for panel C.
+rlf.n.d5              Data file for panel D.
+
+
+To run the program on a Linux machine with XMGrace graphics software, use
+the commands:
+
+make rlf
+./dyn_all.com

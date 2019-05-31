@@ -1,0 +1,44 @@
+scan=n
+seed=7891
+NEURON
+R: beta=0.11 theta=0.10 Mx=0.1
+Iapp=0.44
+L: beta=0.32 theta=0.05 Mx=0.2
+F: beta=0.35 theta=0.28 Mx=0.2
+IappF=0.33 nu=0.75
+SYNAPSES
+RR: gg=5.0 taus=2.0 kf=1.0 UV=0.21 taur=463.0 tauf=0.0
+LR: gg=7.0 taus=2.0 kf=1.0 UV=0.09 taur=0.0 tauf=670.0
+RL: gg=35.0 taus=6.3 kf=1.0 UV=0.3 taur=1250.0 tauf=0.0
+FR: gg=18.0 taus=2.0 kf=1.0 UV=0.3 taur=227.0 tauf=0.0
+RF: gg=38.0 taus=2.0 kf=1.0 UV=0.14 taur=875.0 tauf=0.0
+FF: gg=5.0 taus=2.0 kf=1.0 UV=0.3 taur=400.0 tauf=0.0
+FL: gg=10.0 taus=2.0 kf=1.0 UV=0.3 taur=400.0 tauf=0.0
+LF: gg=20.0 taus=2.0 kf=1.0 UV=0.3 taur=400.0 tauf=0.0
+tghlin=l sfact=n nuif=i sig=100.0
+GENERAL
+deltat=0.02 nt=500000
+twrite=10 tmcol=500000 ttrans=100000 tupdown=100000
+method=r incond=r fpcal=y smforce=l
+
+INITIAL CONDITIONS
+sRR xRR uRR   sLR xLR uLR   sRL xRL uRL
+0.0 1.0 0.21  0.0 1.0 0.09  0.0 1.0 0.3
+sFR xFR uFR   sRF xRF uRF   sFF xFF uFF
+0.0 1.0 0.3   0.0 1.0 0.14  0.0 1.0 0.3
+sFL xFL uFL   sLF xLF uLF 
+0.0 1.0 0.3   0.0 1.0 0.3
+
+
+tghlin    : t - tanh, l - lin, s - sig.
+sfact     : y - with (1-s), n - without (1-s).
+nuif      : i - IappF, n - nu.
+method    : r - Runge-Kutta 4, t - Runge-Kutta 2, e - Euler.
+incond    : r - read.
+fpcal     : y - yes, n - no.
+smforce   : p - always print (sm=0), n - always no print (sm=1),
+           l - leave as is.
+
+
+scan=e
+NEURON Iapp parmin=0.1 parmax=1.6 npar=1000 nrepeat=1
