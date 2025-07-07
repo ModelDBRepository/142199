@@ -1,7 +1,5 @@
 # This program reproduces Fig. 11 in:
-I. Hayut, B.W. Connors, E.E. Fanselow and D. Golomb,  
-LTS and FS inhibitory interneurons, short-term synaptic plasticity, and  
-cortical circuit dynamics  
+I. Hayut, B.W. Connors, E.E. Fanselow and D. Golomb, LTS and FS inhibitory interneurons, short-term synaptic plasticity, and cortical circuit dynamics  
 *PLoS Comput. Biol.* 7(10): e1002248.
 
 ## Files
